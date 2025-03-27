@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "c:\\Users\\lpres\\Documents\\Minecraft ModdingbuildMinecraft Modding",
+			"script": "build",
+			"description": "Assembles and tests this project.",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"project": "Minecraft Modding",
+			"buildFile": "C:\\Users\\lpres\\Documents\\Minecraft Modding\\build.gradle",
+			"rootProject": "Minecraft Modding",
+			"projectFolder": "c:\\Users\\lpres\\Documents\\Minecraft Modding",
+			"workspaceFolder": "c:\\Users\\lpres\\Documents\\Minecraft Modding",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: build"
+		}
+	]
+}
