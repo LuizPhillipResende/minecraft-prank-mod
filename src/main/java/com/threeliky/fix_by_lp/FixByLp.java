@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.network.chat.Component; // Importação faltante
 import net.minecraftforge.client.event.EntityRenderersEvent; // Importação do evento
+import net.minecraft.client.model.geom.ModelLayers;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(FixByLp.MOD_ID)
@@ -58,7 +59,7 @@ public class FixByLp {
     public FixByLp(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
-        ModEntities.ENTITIES.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -150,7 +151,8 @@ public class FixByLp {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            event.registerEntityRenderer(ModEntities.FAKE_PLAYER.get(), FakePlayerRenderer::new);
+            event.registerEntityRenderer(ModEntities.FAKE_PLAYER.get(), 
+                context -> new FakePlayerRenderer<>(context, false));
         }
     }
 }

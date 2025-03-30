@@ -39,9 +39,9 @@ public class FakePlayerEntity extends Monster {
     public ResourceLocation getSkinTexture() {
         if (gameProfile.getProperties().containsKey("textures")) {
             Property property = gameProfile.getProperties().get("textures").iterator().next();
-            return new ResourceLocation("textures/entity/" + property.getValue() + ".png");
+            return ResourceLocation.parse("minecraft:textures/entity/" + property.getValue() + ".png");
         }
-        return new ResourceLocation("textures/entity/steve.png");
+        return ResourceLocation.parse("minecraft:textures/entity/steve.png");
     }
 
     @Override
